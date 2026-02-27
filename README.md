@@ -14,7 +14,8 @@
 
 ### Тестирование
 
- 
+ <img width="1079" height="187" alt="image" src="https://github.com/user-attachments/assets/6b3bbc22-8a56-42a2-a67a-08768a5fc71e" />
+
 
 ## Задача 2
 
@@ -28,3 +29,5 @@
 
 ### Тестирование
 
+<img width="1087" height="167" alt="image" src="https://github.com/user-attachments/assets/066c7880-7cb5-40ce-a095-6bb6a127b9fc" />
+<img width="1085" height="141" alt="image" src="https://github.com/user-attachments/assets/3e684072-8f2e-45d8-9393-5dba939fad5d" />
