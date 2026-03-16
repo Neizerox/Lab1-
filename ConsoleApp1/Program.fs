@@ -1,17 +1,25 @@
 ﻿open System
 
 //Номер 1
+
+
+let listFunctions = 
+    let assembly = typeof<List<int>>.Assembly
+    let moduleType = assembly.GetType("Microsoft.FSharp.Collections.ListModule")
+    
+    moduleType.GetMethods()
+    |> Array.map (fun method -> method.Name)
+    |> Array.distinct
+    |> Array.sort
+    |> Array.toList
+
 [<EntryPoint>]
 let main argv =
+    printfn "Список функций модуля List:"
+    listFunctions |> List.iter (printfn "%s")
     
-    let listFunctions = 
-        [
-        "List.empty"; "List.singleton"; "List.init"; 
-        "List.iter"; "List.iteri"; "List.fold"; 
-        "List.exists"; "List.tryFind"; "List.filter"; 
-        "List.map"; "List.sort"; "List.takeWhile"
-        ]
-    printfn "Список модулей list: %A" listFunctions
+    printfn "\nВсего функций: %d" (listFunctions.Length)
+
     0
 //Номер 2
 (*
