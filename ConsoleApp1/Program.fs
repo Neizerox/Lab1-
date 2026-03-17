@@ -1,8 +1,8 @@
-﻿open System
+open System
 
 //Номер 1
 
-
+(*
 let listFunctions = 
     let assembly = typeof<List<int>>.Assembly
     let moduleType = assembly.GetType("Microsoft.FSharp.Collections.ListModule")
@@ -16,11 +16,9 @@ let listFunctions =
 [<EntryPoint>]
 let main argv =
     printfn "Список функций модуля List:"
-    listFunctions |> List.iter (printfn "%s")
-    
-    printfn "\nВсего функций: %d" (listFunctions.Length)
-
+    listFunctions |> List.iter (printf "%A, ")
     0
+ *)
 //Номер 2
 (*
 let rec checkEvenDigits n =
@@ -42,15 +40,16 @@ let main argv =
 *)
 //Номер 3 
 (*
-open System
 
 // Тип для комплексного числа
 type MyComplex = { Re: float; Im: float }
 
-// --- Математические операции ---
-let add z1 z2 = { Re = z1.Re + z2.Re; Im = z1.Im + z2.Im }
+//Математические операции
+let add z1 z2 = 
+    { Re = z1.Re + z2.Re; Im = z1.Im + z2.Im }
 
-let sub z1 z2 = { Re = z1.Re - z2.Re; Im = z1.Im - z2.Im }
+let sub z1 z2 = 
+    { Re = z1.Re - z2.Re; Im = z1.Im - z2.Im }
 
 let mul z1 z2 = 
     { Re = z1.Re * z2.Re - z1.Im * z2.Im
@@ -59,8 +58,8 @@ let mul z1 z2 =
 let div z1 z2 = 
     let denom = z2.Re ** 2.0 + z2.Im ** 2.0
     if denom = 0.0 then 
-        printfn "\n!!! ОШИБКА: Попытка деления на ноль (z2 = 0 + 0i) !!!"
-        { Re = 0.0; Im = 0.0 } // Возвращаем ноль вместо вылета
+        printfn "\n!!! ОШИБКА"
+        { Re = 0.0; Im = 0.0 } // Возвращаем ноль
     else
         { Re = (z1.Re * z2.Re + z1.Im * z2.Im) / denom
           Im = (z1.Im * z2.Re - z1.Re * z2.Im) / denom }
@@ -77,7 +76,7 @@ let toString z = sprintf "%.2f + %.2fi" z.Re z.Im
 
 [<EntryPoint>]
 let main argv =
-    printfn "=== Ввод комплексных чисел (a + bi) ==="
+    printfn "Ввод комплексных чисел (a + bi)"
     
     // Запрос первого числа
     printf "Введите вещественную часть z1 (a): "
@@ -97,11 +96,8 @@ let main argv =
     printf "\nВ какую степень возвести первое число? "
     let n = float (Console.ReadLine())
 
-    // Вычисления и вывод
-    printfn "\n--- Результаты ---"
     printfn "z1 = %s" (toString z1)
     printfn "z2 = %s" (toString z2)
-    printfn "------------------------"
     printfn "Сложение:    %s" (toString (add z1 z2))
     printfn "Вычитание:   %s" (toString (sub z1 z2))
     printfn "Умножение:   %s" (toString (mul z1 z2))
@@ -109,49 +105,7 @@ let main argv =
     printfn "z1 в степени %.0f: %s" n (toString (pow z1 n))
 
     0
+
+
 *)
-(*
-                                                                           
-=== Ввод комплексных чисел (a + bi) ===
-Введите вещественную часть z1 (a): 3
-Введите мнимую часть z1 (b): 4
-
-Введите вещественную часть z2 (c): 2
-Введите мнимую часть z2 (d): 3
-
-В какую степень возвести первое число? 2
-
---- Результаты ---
-z1 = 3.00 + 4.00i
-z2 = 2.00 + 3.00i
-------------------------
-Сложение:    5.00 + 7.00i
-Вычитание:   1.00 + 1.00i
-Умножение:   -6.00 + 17.00i
-Деление:     1.38 + -0.08i
-z1 в степени 2: -7.00 + 24.00i
-                                                                            
-=== Ввод комплексных чисел (a + bi) ===
-Введите вещественную часть z1 (a): 3
-Введите мнимую часть z1 (b): 4
-
-Введите вещественную часть z2 (c): 0
-Введите мнимую часть z2 (d): 0
-
-В какую степень возвести первое число? 2
-
---- Результаты ---
-z1 = 3.00 + 4.00i
-z2 = 0.00 + 0.00i
-------------------------
-Сложение:    3.00 + 4.00i
-Вычитание:   3.00 + 4.00i
-Умножение:   0.00 + 0.00i
-
-!!! ОШИБКА: Попытка деления на ноль (z2 = 0 + 0i) !!!
-Деление:     0.00 + 0.00i
-z1 в степени 2: -7.00 + 24.00i
-*)
-
-
 
