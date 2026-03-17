@@ -2,7 +2,7 @@ open System
 
 //Номер 1
 
-(*
+
 let listFunctions = 
     let assembly = typeof<List<int>>.Assembly
     let moduleType = assembly.GetType("Microsoft.FSharp.Collections.ListModule")
@@ -18,7 +18,7 @@ let main argv =
     printfn "Список функций модуля List:"
     listFunctions |> List.iter (printf "%A, ")
     0
- *)
+    
 //Номер 2
 (*
 let rec checkEvenDigits n =
