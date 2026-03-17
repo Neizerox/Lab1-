@@ -2,23 +2,22 @@ open System
 
 //Номер 1
 
-
 let listFunctions = 
     let assembly = typeof<List<int>>.Assembly
     let moduleType = assembly.GetType("Microsoft.FSharp.Collections.ListModule")
     
     moduleType.GetMethods()
     |> Array.map (fun method -> method.Name)
-    |> Array.distinct
-    |> Array.sort
     |> Array.toList
+    |> List.distinct
+    |> List.sort
 
 [<EntryPoint>]
 let main argv =
     printfn "Список функций модуля List:"
     listFunctions |> List.iter (printf "%A, ")
     0
-    
+
 //Номер 2
 (*
 let rec checkEvenDigits n =
